@@ -1,13 +1,16 @@
 import axios from 'axios';
-import { ICocktail } from 'types/type';
-import { isNil, omitBy } from 'lodash';
 
-const DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=15395';
+const DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 
-export const postCocktailByIdApi = async () => {
-  return axios.post(DATA_URL).then((res) => {
-    const { drinks } = res.data;
-    const removedNullValue = drinks.map((drink: ICocktail) => omitBy(drink, isNil));
-    return removedNullValue;
-  });
+export const postCocktailByIdApi = async ({ idDrink }: { idDrink: string | undefined }) => {
+  return axios
+    .post(`${DATA_URL}${idDrink}`)
+    .then((res) => {
+      const { drinks } = res.data;
+      return drinks;
+    })
+    .catch((e) => {
+      // eslint-disable-next-line no-console
+      console.error(e);
+    });
 };

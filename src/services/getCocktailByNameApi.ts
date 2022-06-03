@@ -1,27 +1,39 @@
 import axios from 'axios';
-import { ICocktail } from 'types/type';
-import { isNil, omitBy } from 'lodash';
+import { Temp } from 'routes/cocktailNameSearch/cocktailDetail';
 
-const DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=milk&api_key=1';
+const DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?api_key=1&s=';
+const KEYS = [
+  'idDrink',
+  'strAlcoholic',
+  'strCategory',
+  'strDrink',
+  'strDrinkThumb',
+  'strGlass',
+  'strIBA',
+  'strImageAttribution',
+  'strIngredient',
+  'strMeasure',
+  'strInstructions',
+];
 
-export const getCocktailByNameApi = async () => {
-  return axios.get(DATA_URL).then((res) => {
-    /**
-     * null인 데이터 지우기
-     * strInstructionsZH-HANS?: null
-     * strInstructionsZH-HANT?: null
-     * 데이터 속성 카멜케이스로 바꾸기
-     */
-    const { drinks } = res.data;
-    const removedNullValue = drinks.map((drink: ICocktail) => {
-      const removed = omitBy(drink, isNil);
-      const keys = Object.keys(drink);
-      const strIngredientArray = keys.filter((key: string) => key.includes('strIngredient'));
-      const strMeasureArray = keys.filter((key: string) => key.includes('strMeasure'));
-      // const strIngredientObject =
-      // removed['strIngredient'] =
-      return removed;
+export const getCocktailByNameApi = async ({ searchWord }: { searchWord: string }) => {
+  return axios
+    .get(`${DATA_URL}${searchWord}`)
+    .then((res) => {
+      const { drinks } = res.data;
+      if (!drinks) {
+        return [];
+      }
+      const removedNullValue = drinks.map((d: any) => {
+        return KEYS.reduce((acc: Temp, curr) => {
+          acc[curr] = d[curr];
+          return acc;
+        }, {});
+      });
+      return removedNullValue;
+    })
+    .catch((e) => {
+      // eslint-disable-next-line no-console
+      console.error(e);
     });
-    return removedNullValue;
-  });
 };

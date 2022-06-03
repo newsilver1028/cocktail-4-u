@@ -50,6 +50,7 @@
 
     "no-shadow": "off",
     "no-unused-expressions": ["warn"],
+    "no-useless-return": "off",
     "@typescript-eslint/no-shadow": ["error"],
     "@typescript-eslint/naming-convention": "off",
     "@typescript-eslint/unbound-method": "off",

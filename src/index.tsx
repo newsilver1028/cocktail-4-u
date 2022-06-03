@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import reportWebVitals from './reportWebVitals';
 import Routes from './routes';
-import './styles/index.scss';
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { refetchOnMount: false } },
