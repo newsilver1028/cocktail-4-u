@@ -3,19 +3,17 @@ import {
   Center,
   Flex,
   Heading,
-  Text,
   Image,
-  Divider,
   Table,
   TableContainer,
   Tbody,
   Td,
-  Tr,
-  Thead,
+  Text,
   Th,
+  Thead,
+  Tr,
 } from '@chakra-ui/react';
 import { ActiveIcon, DisabledIcon } from 'assets/svgs';
-import IngredientItem from 'components/ingredientItem';
 import { useRecoilState } from 'recoil';
 import { bookmarkedState } from 'state/bookmarkedState';
 import { ICocktail } from 'types/type.d';

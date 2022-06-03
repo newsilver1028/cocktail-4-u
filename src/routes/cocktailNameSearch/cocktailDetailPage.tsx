@@ -1,4 +1,4 @@
-import { Center, Spinner } from '@chakra-ui/react';
+import { Box, Center, Spinner } from '@chakra-ui/react';
 import Header from 'components/header/header';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
@@ -14,7 +14,7 @@ const CocktailDetailPage = () => {
   const { isLoading, data } = useQuery(['postCocktailById', idDrink], () => postCocktailByIdApi({ idDrink }));
 
   return (
-    <div>
+    <Box>
       <Header />
       {isLoading && (
         <Center height='100vh' w='750px'>
@@ -22,7 +22,7 @@ const CocktailDetailPage = () => {
         </Center>
       )}
       {!isLoading && <CocktailDetail item={data[0]} />}
-    </div>
+    </Box>
   );
 };
 

@@ -1,5 +1,5 @@
 import { Center, Divider, Flex, Heading, Box } from '@chakra-ui/react';
-import IngredientItem from 'components/ingredientItem';
+import IngredientItem from 'routes/ingredientSearch/ingredientItem';
 import { useQueries } from 'react-query';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
@@ -24,7 +24,7 @@ const IngredientSearch = () => {
   const { isLoading: isCocktailsLoading, data: cocktails } = cocktailsQuery;
 
   return (
-    <Box my='5%'>
+    <Box my='5%' minW='400px'>
       <Heading size='lg' my='5%' ml='60px'>
         INGREDIENT
       </Heading>
@@ -53,14 +53,14 @@ const IngredientSearch = () => {
               </Link>
             ))}
         </Flex>
-        <Center>
-          {!cocktails ||
-            (cocktails.length === 0 && (
-              <Heading size='lg' my='30%'>
-                We can&#39;t find any cocktails
-              </Heading>
-            ))}
-        </Center>
+      </Center>
+      <Center>
+        {!cocktails ||
+          (cocktails.length === 0 && (
+            <Heading size='lg' my='30%'>
+              We can&#39;t find any cocktails
+            </Heading>
+          ))}
       </Center>
     </Box>
   );
