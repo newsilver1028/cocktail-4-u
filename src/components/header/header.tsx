@@ -1,4 +1,4 @@
-import { Button, Divider, Flex, Text } from '@chakra-ui/react';
+import { Button, Flex, Text } from '@chakra-ui/react';
 import { ActiveIcon } from 'assets/svgs';
 import BackButton from 'components/backButton/backButton';
 import { Link } from 'react-router-dom';

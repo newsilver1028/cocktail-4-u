@@ -1,22 +1,9 @@
-import { ICocktail } from 'types/type.d';
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Image,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Text,
-  Tr,
-} from '@chakra-ui/react';
-import { useRecoilState } from 'recoil';
-import { bookmarkedState } from 'state/bookmarkedState';
+import { Button, Flex, Heading, Image, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
 import { ActiveIcon, DisabledIcon } from 'assets/svgs';
 import { Link } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { bookmarkedState } from 'state/bookmarkedState';
+import { ICocktail } from 'types/type.d';
 
 const CocktailItem = ({ item }: { item: ICocktail }) => {
   const { idDrink, strAlcoholic, strCategory, strDrink, strDrinkThumb, strGlass } = item;

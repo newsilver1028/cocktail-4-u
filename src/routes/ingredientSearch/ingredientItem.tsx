@@ -1,22 +1,19 @@
 import {
-  Button,
-  Text,
   Flex,
   Heading,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
   Table,
   TableContainer,
   Tbody,
   Td,
+  Text,
   Tr,
   useDisclosure,
-  Box,
 } from '@chakra-ui/react';
 import { IIngredient } from 'types/type.d';
 

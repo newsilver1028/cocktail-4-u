@@ -1,8 +1,8 @@
-import { Center, Divider, Flex, Heading, Box, Spinner } from '@chakra-ui/react';
-import IngredientItem from 'routes/ingredientSearch/ingredientItem';
+import { Box, Center, Flex, Heading, Spinner } from '@chakra-ui/react';
 import { useQueries } from 'react-query';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
+import IngredientItem from 'routes/ingredientSearch/ingredientItem';
 import { getCocktailByIngredientApi } from 'services/getCocktailByIngredient';
 import { getIngredientByNameApi } from 'services/getIngredientByNameApi';
 import { searchWordState } from 'state/searchWordState';
