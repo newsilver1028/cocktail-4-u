@@ -52,7 +52,7 @@ const IngredientSearch = () => {
       <Center>
         {!ingredients ||
           (ingredients.length === 0 && (
-            <Heading size='lg' my='10%' fontWeight='normal'>
+            <Heading size='md' my='10%' fontWeight='normal'>
               We can&#39;t find any ingredients
             </Heading>
           ))}
@@ -79,7 +79,7 @@ const IngredientSearch = () => {
       <Center>
         {!cocktails ||
           (cocktails.length === 0 && (
-            <Heading size='lg' my='10%' fontWeight='normal'>
+            <Heading size='md' my='10%' fontWeight='normal'>
               We can&#39;t find any cocktails
             </Heading>
           ))}

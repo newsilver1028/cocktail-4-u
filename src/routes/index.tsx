@@ -6,12 +6,17 @@ import CocktailNameSearch from './cocktailNameSearch';
 import IngredientSearch from './ingredientSearch';
 import Layout from './layout';
 
+import '@fontsource/quicksand/700.css';
+
 const theme = extendTheme({
   colors: {
     bgColor: {
       100: '#000000',
       200: '#172736',
     },
+  },
+  font: {
+    logo: `'Quicksand', sans-serif'`,
   },
 });
 

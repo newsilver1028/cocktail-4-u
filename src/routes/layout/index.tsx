@@ -23,8 +23,8 @@ const Layout = () => {
     <Box maxW='1080px' w='container.xl' color='white'>
       <Header />
       <Center my='8%'>
-        <Heading as='h1' size='2xl' letterSpacing='widest' color='white'>
-          Cocktail 4 U
+        <Heading as='h1' size='2xl' letterSpacing='widest' color='white' fontFamily='font.logo'>
+          COCKTAIL 4 U
         </Heading>
       </Center>
       <Center>

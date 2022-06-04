@@ -23,7 +23,7 @@ const CocktailNameSearch = () => {
       )}
       {!data ||
         (data.length === 0 && (
-          <Heading mt='10px' fontWeight='normal' h='50vh'>
+          <Heading mt='10px' h='50vh' fontWeight='normal' size='md'>
             We can&#39;t find any cocktail
           </Heading>
         ))}
