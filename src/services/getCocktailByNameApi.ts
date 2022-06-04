@@ -1,9 +1,12 @@
 import axios from 'axios';
 import { formatCocktail } from 'util/formatCocktail';
 
-const DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?api_key=1&s=';
-
 export const getCocktailByNameApi = async ({ searchWord }: { searchWord: string }) => {
+  let DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?api_key=1&s=';
+  if (searchWord.length === 1) {
+    DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=';
+  }
+
   return axios
     .get(`${DATA_URL}${searchWord}`)
     .then((res) => {
