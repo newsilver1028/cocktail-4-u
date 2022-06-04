@@ -7,7 +7,13 @@ const CocktailByIngredient = ({ item }: { item: ICocktailByIngredient }) => {
   return (
     <Flex flexFlow='column' gap='5' minW='300px' justifyContent='space-around'>
       <Center>
-        <Image src={strDrinkThumb} alt={strDrink} boxSize='250px' borderRadius='md' />
+        <Image
+          src={strDrinkThumb}
+          alt={strDrink}
+          boxSize='250px'
+          borderRadius='md'
+          fallbackSrc='https://cdn-icons-png.flaticon.com/512/3126/3126698.png'
+        />
       </Center>
       <Center>
         <Heading size='lg' noOfLines={1} w='250px'>

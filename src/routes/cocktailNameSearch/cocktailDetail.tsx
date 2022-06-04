@@ -93,7 +93,13 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
               </Tbody>
             </Table>
           </TableContainer>
-          <Image src={strDrinkThumb} alt={strDrink} boxSize='350px' borderRadius='md' />
+          <Image
+            src={strDrinkThumb}
+            alt={strDrink}
+            boxSize='350px'
+            borderRadius='md'
+            fallbackSrc='https://cdn-icons-png.flaticon.com/512/3126/3126698.png'
+          />
         </Flex>
         <Flex flexDirection='column' rowGap='20' maxW='720px' m='30px 20px'>
           <Box>

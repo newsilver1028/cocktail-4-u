@@ -23,7 +23,13 @@ const CocktailItem = ({ item }: { item: ICocktail }) => {
   return (
     <Flex flexFlow='row wrap' gap='5' minW='400px' justifyContent='space-around' p='10px'>
       <Link to={`/cocktail/${item.idDrink}`} key={item.idDrink}>
-        <Image src={strDrinkThumb} alt={strDrink} boxSize='230px' borderRadius='md' />
+        <Image
+          src={strDrinkThumb}
+          alt={strDrink}
+          boxSize='230px'
+          borderRadius='md'
+          fallbackSrc='https://cdn-icons-png.flaticon.com/512/3126/3126698.png'
+        />
       </Link>
       <Flex flexDirection='column' gap='2' maxW='250px' minW='200px' letterSpacing='wide'>
         <Heading size='lg' noOfLines={1} w='325px'>
