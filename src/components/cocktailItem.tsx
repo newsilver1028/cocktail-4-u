@@ -38,7 +38,7 @@ const CocktailItem = ({ item }: { item: ICocktail }) => {
       <Link to={`/cocktail/${item.idDrink}`} key={item.idDrink}>
         <Image src={strDrinkThumb} alt={strDrink} boxSize='230px' borderRadius='md' />
       </Link>
-      <Flex flexDirection='column' gap='2' maxW='250px' minW='200px'>
+      <Flex flexDirection='column' gap='2' maxW='250px' minW='200px' letterSpacing='wide'>
         <Heading size='lg' noOfLines={1} w='325px'>
           {strDrink}
         </Heading>
@@ -54,7 +54,7 @@ const CocktailItem = ({ item }: { item: ICocktail }) => {
           _hover={{ bgColor: 'transparent' }}
           _active={{ bgColor: 'transparent' }}
         >
-          {isbookmarked ? <ActiveIcon width='30px' /> : <DisabledIcon width='30px' />}
+          {isbookmarked ? <ActiveIcon width='30px' height='30px' /> : <DisabledIcon width='30px' height='30px' />}
         </Button>
         <TableContainer>
           <Table variant='simple' size='sm'>

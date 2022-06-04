@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <header>
-      <Flex w='100%' justify='space-between'>
+      <Flex w='100%' justify='space-between' mt='10px'>
         <Link to='/'>
           <Button
             bgColor='transparent'
@@ -15,7 +15,9 @@ const Header = () => {
             _active={{ bgColor: 'transparent' }}
           >
             <ActiveIcon width='30px' />
-            <Text ml='10px'>C4U</Text>
+            <Text ml='10px' color='white' fontWeight='normal' fontSize='xl' letterSpacing='wide'>
+              C4U
+            </Text>
           </Button>
         </Link>
         <Link to='/bookmark'>
@@ -27,11 +29,12 @@ const Header = () => {
             _active={{ bgColor: 'transparent' }}
           >
             <ActiveIcon width='30px' />
-            <Text ml='10px'>My cocktail</Text>
+            <Text ml='10px' color='white' fontWeight='normal' fontSize='xl' letterSpacing='wide'>
+              My Cocktail
+            </Text>
           </Button>
         </Link>
       </Flex>
-      <Divider w='100%' />
     </header>
   );
 };

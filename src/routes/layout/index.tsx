@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, Heading, Input, Link } from '@chakra-ui/react';
+import { Box, Button, Center, Divider, Flex, Heading, Input } from '@chakra-ui/react';
 import { SearchIcon } from 'assets/svgs';
 import { ChangeEvent, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
@@ -20,37 +20,64 @@ const Layout = () => {
   };
 
   return (
-    <Box>
+    <Box maxW='1080px' w='container.xl' color='white'>
       <Header />
-      <Center my='10%'>
-        <Heading as='h1' size='4xl' fontFamily='mono'>
+      <Center my='8%'>
+        <Heading as='h1' size='2xl' letterSpacing='widest' color='white'>
           Cocktail 4 U
         </Heading>
       </Center>
-      <Center my='10%'>
-        <Flex flexDirection='column'>
-          <Link as={NavLink} to='/' {...({ isActive }: { isActive: boolean }) => isActive && { bgColor: '#9d9d9d' }}>
-            {/* <NavLink to='/' style={({ isActive }) => isActive && { backgroundColor: '#9d9d9d' }}> */}
-            {/* <Button>COCKTAIL</Button> */}
-            COCKTAIL
-            {/* </NavLink> */}
-          </Link>
-          <NavLink
-            to='/ingredient'
-            style={(isActive) => (isActive ? { backgroundColor: '#9d9d9d' } : { backgroundColor: 'transparent' })}
-          >
-            <Button>INGREDIENT</Button>
-            {/* INGREDIENT */}
+      <Center>
+        <Flex justify='space-around' w='400px'>
+          <NavLink to='/' style={({ isActive }) => (isActive ? { borderBottom: '1px solid #ffffff' } : {})}>
+            <Button
+              fontSize='lg'
+              fontWeight='normal'
+              bgColor='transparent'
+              overflow='hidden'
+              letterSpacing='wide'
+              _focus={{ outline: 'none' }}
+              _hover={{ bgColor: 'transparent' }}
+              _active={{ bgColor: 'transparent' }}
+            >
+              COCKTAIL
+            </Button>
+          </NavLink>
+          <NavLink to='/ingredient' style={({ isActive }) => (isActive ? { borderBottom: '1px solid #ffffff' } : {})}>
+            <Button
+              fontSize='lg'
+              fontWeight='normal'
+              bgColor='transparent'
+              letterSpacing='wide'
+              _focus={{ outline: 'none' }}
+              _hover={{ bgColor: 'transparent' }}
+              _active={{ bgColor: 'transparent' }}
+            >
+              INGREDIENT
+            </Button>
           </NavLink>
         </Flex>
+      </Center>
+      <Center my='5%' w='100%'>
         <form onSubmit={handleSearchButtonSubmit}>
-          <Box position='relative' w='400px'>
-            <Input placeholder='search your cocktail' onChange={handleInputText} value={inputText} w='400px' />
+          <Box position='relative' w='330px'>
+            <Input
+              fontSize='xl'
+              letterSpacing='wide'
+              placeholder='Search your cocktail'
+              _placeholder={{ color: 'white', fontSize: 'xl', letterSpacing: 'wide' }}
+              onChange={handleInputText}
+              value={inputText}
+              w='100%'
+              h='50px'
+              _focus={{ outline: 'none' }}
+            />
             <Button
               type='submit'
               onSubmit={handleSearchButtonSubmit}
               position='absolute'
               right='0'
+              top='1'
               bgColor='transparent'
               _focus={{ outline: 'none' }}
               _hover={{ bgColor: 'transparent' }}

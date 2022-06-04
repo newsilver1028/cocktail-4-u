@@ -14,7 +14,7 @@ const CocktailDetailPage = () => {
   const { isLoading, data } = useQuery(['postCocktailById', idDrink], () => postCocktailByIdApi({ idDrink }));
 
   return (
-    <Box>
+    <Box maxW='1080px' w='container.xl' color='white' letterSpacing='wide'>
       <Header />
       {isLoading && (
         <Center height='100vh' w='750px'>

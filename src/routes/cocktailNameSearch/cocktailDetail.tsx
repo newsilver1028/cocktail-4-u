@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Center,
   Flex,
@@ -51,7 +52,7 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
   };
 
   return (
-    <Center maxW='980px' my='10%'>
+    <Center my='10%' color='white'>
       <Flex flexDirection='column' rowGap='20'>
         <Center>
           <Flex justify='space-between' my='10%'>
@@ -92,33 +93,39 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
               </Tbody>
             </Table>
           </TableContainer>
-          <Image src={strDrinkThumb} alt={strDrink} boxSize='350px' minW='350px' borderRadius='md' />
+          <Image src={strDrinkThumb} alt={strDrink} boxSize='350px' borderRadius='md' />
         </Flex>
-        <Flex flexDirection='column' rowGap='10' maxW='720px' mx='10px'>
-          <Heading size='lg'>Description</Heading>
-          <Text fontSize='lg'>{strInstructions}</Text>
-          <Heading size='lg'>Recipe</Heading>
-          <TableContainer>
-            <Table variant='simple' size='lg'>
-              <Thead>
-                <Tr>
-                  <Th>INGREDIENT</Th>
-                  <Th>MEASURE</Th>
-                </Tr>
-              </Thead>
-              <Tbody>
-                {strIngredient.map((ingredient, i) => {
-                  const measure = strMeasure[i] ?? '';
-                  return (
-                    <Tr key={ingredient}>
-                      <Td>{ingredient}</Td>
-                      <Td>{measure}</Td>
-                    </Tr>
-                  );
-                })}
-              </Tbody>
-            </Table>
-          </TableContainer>
+        <Flex flexDirection='column' rowGap='20' maxW='720px' m='30px 20px'>
+          <Box>
+            <Heading size='lg'>Description</Heading>
+            <Text fontSize='lg' my='20px'>
+              {strInstructions}
+            </Text>
+          </Box>
+          <Box>
+            <Heading size='lg'>Recipe</Heading>
+            <TableContainer my='20px'>
+              <Table variant='simple' size='lg'>
+                <Thead>
+                  <Tr>
+                    <Th color='white'>INGREDIENT</Th>
+                    <Th color='white'>MEASURE</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {strIngredient.map((ingredient, i) => {
+                    const measure = strMeasure[i] ?? '';
+                    return (
+                      <Tr key={ingredient}>
+                        <Td>{ingredient}</Td>
+                        <Td>{measure}</Td>
+                      </Tr>
+                    );
+                  })}
+                </Tbody>
+              </Table>
+            </TableContainer>
+          </Box>
         </Flex>
       </Flex>
     </Center>

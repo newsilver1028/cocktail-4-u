@@ -8,16 +8,22 @@ import { ICocktail } from 'types/type';
 const BookmarkPage = () => {
   const bookmarkList = useRecoilValue<ICocktail[]>(bookmarkedState);
   return (
-    <Box>
+    <Box maxW='1080px' w='container.xl' color='white' minH='container.md'>
       <Header />
       <Center my='10%'>
-        <Heading size='3xl'>My Cocktail</Heading>
+        <Heading size='2xl' letterSpacing='widest'>
+          My Cocktail
+        </Heading>
       </Center>
-      <Center>
+      <Center my='10%'>
         <Flex flexFlow='row wrap' rowGap='20' justify='space-around' flex='1' maxW='1080px'>
-          {!bookmarkList
-            ? '좋아하는 칵테일을 찜해보세요!'
-            : bookmarkList.map((item: ICocktail) => <CocktailItem key={item.idDrink} item={item} />)}
+          {bookmarkList.length === 0 ? (
+            <Heading mt='30%' fontWeight='normal' h='50vh'>
+              Add your Cocktail
+            </Heading>
+          ) : (
+            bookmarkList.map((item: ICocktail) => <CocktailItem key={item.idDrink} item={item} />)
+          )}
         </Flex>
       </Center>
     </Box>
