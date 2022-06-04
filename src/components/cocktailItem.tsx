@@ -35,7 +35,7 @@ const CocktailItem = ({ item }: { item: ICocktail }) => {
 
   return (
     <Flex flexFlow='row wrap' gap='5' minW='400px' justifyContent='space-around' p='10px'>
-      <Link to={`cocktail/${item.idDrink}`} key={item.idDrink}>
+      <Link to={`/cocktail/${item.idDrink}`} key={item.idDrink}>
         <Image src={strDrinkThumb} alt={strDrink} boxSize='230px' borderRadius='md' />
       </Link>
       <Flex flexDirection='column' gap='2' maxW='250px' minW='200px'>

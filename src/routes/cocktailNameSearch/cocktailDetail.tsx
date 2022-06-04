@@ -33,7 +33,6 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
     strDrinkThumb,
     strGlass,
     strIBA,
-    strImageAttribution,
     strIngredient,
     strMeasure,
     strInstructions,
@@ -86,6 +85,10 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
                   <Td>ALCOHOL</Td>
                   <Td>{strAlcoholic}</Td>
                 </Tr>
+                <Tr>
+                  <Td>IBA</Td>
+                  <Td>{strIBA}</Td>
+                </Tr>
               </Tbody>
             </Table>
           </TableContainer>
@@ -104,12 +107,15 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
                 </Tr>
               </Thead>
               <Tbody>
-                {/* {strIngredient.map((ingredient, i) => (
-                  <Tr key='ingredient'>
-                    <Td>{ingredient}</Td>
-                    <Td>{strMeasure[i]}</Td>
-                  </Tr>
-                ))} */}
+                {strIngredient.map((ingredient, i) => {
+                  const measure = strMeasure[i] ?? '';
+                  return (
+                    <Tr key={ingredient}>
+                      <Td>{ingredient}</Td>
+                      <Td>{measure}</Td>
+                    </Tr>
+                  );
+                })}
               </Tbody>
             </Table>
           </TableContainer>

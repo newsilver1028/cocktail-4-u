@@ -18,7 +18,7 @@ const Header = () => {
             <Text ml='10px'>C4U</Text>
           </Button>
         </Link>
-        <Link to='bookmark'>
+        <Link to='/bookmark'>
           <Button
             bgColor='transparent'
             mb='15px'

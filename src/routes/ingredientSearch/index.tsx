@@ -29,9 +29,11 @@ const IngredientSearch = () => {
         INGREDIENT
       </Heading>
       <Center>
-        {!isIngredientsLoading &&
-          ingredients &&
-          ingredients.map((item: IIngredient) => <IngredientItem key={item.idIngredient} item={item} />)}
+        <Flex flexFlow='row wrap' rowGap='20' justify='space-around' flex='1' maxW='1080px'>
+          {!isIngredientsLoading &&
+            ingredients &&
+            ingredients.map((item: IIngredient) => <IngredientItem key={item.idIngredient} item={item} />)}
+        </Flex>
         {!ingredients ||
           (ingredients.length === 0 && (
             <Heading size='lg' my='30%'>
@@ -48,7 +50,7 @@ const IngredientSearch = () => {
           {!isCocktailsLoading &&
             cocktails &&
             cocktails.map((item: ICocktailByIngredient) => (
-              <Link to={`${item.idDrink}`} key={item.idDrink}>
+              <Link to={`/ingredient/${item.idDrink}`} key={item.idDrink}>
                 <CocktailByIngredient key={item.idDrink} item={item} />
               </Link>
             ))}

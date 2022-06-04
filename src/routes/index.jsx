@@ -16,10 +16,8 @@ const App = () => {
             <Route path='ingredient' element={<IngredientSearch />} />
             <Route path='*' element={<div>404</div>} />
           </Route>
-          <Route path='bookmark/:idDrink' element={<CocktailDetailPage />} />
           <Route path='cocktail/:idDrink' element={<CocktailDetailPage />} />
           <Route path='bookmark' element={<BookmarkPage />} />
-          <Route path='cocktail/:idDrink/bookmark' element={<BookmarkPage />} />
           <Route path='ingredient/:idDrink' element={<CocktailDetailPage />} />
         </Routes>
       </Center>

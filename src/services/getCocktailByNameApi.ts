@@ -1,20 +1,7 @@
 import axios from 'axios';
-import { Temp } from 'routes/cocktailNameSearch/cocktailDetail';
+import { formatCocktail } from 'util/formatCocktail';
 
 const DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?api_key=1&s=';
-const KEYS = [
-  'idDrink',
-  'strAlcoholic',
-  'strCategory',
-  'strDrink',
-  'strDrinkThumb',
-  'strGlass',
-  'strIBA',
-  'strImageAttribution',
-  'strIngredient',
-  'strMeasure',
-  'strInstructions',
-];
 
 export const getCocktailByNameApi = async ({ searchWord }: { searchWord: string }) => {
   return axios
@@ -24,13 +11,9 @@ export const getCocktailByNameApi = async ({ searchWord }: { searchWord: string 
       if (!drinks) {
         return [];
       }
-      const removedNullValue = drinks.map((d: any) => {
-        return KEYS.reduce((acc: Temp, curr) => {
-          acc[curr] = d[curr];
-          return acc;
-        }, {});
-      });
-      return removedNullValue;
+      const cocktails = drinks.map((d: any) => formatCocktail(d));
+
+      return cocktails;
     })
     .catch((e) => {
       // eslint-disable-next-line no-console

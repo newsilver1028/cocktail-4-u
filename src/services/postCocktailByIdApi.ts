@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { formatCocktail } from 'util/formatCocktail';
 
 const DATA_URL = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 
@@ -7,7 +8,9 @@ export const postCocktailByIdApi = async ({ idDrink }: { idDrink: string | undef
     .post(`${DATA_URL}${idDrink}`)
     .then((res) => {
       const { drinks } = res.data;
-      return drinks;
+      const cocktails = drinks.map((d: any) => formatCocktail(d));
+
+      return cocktails;
     })
     .catch((e) => {
       // eslint-disable-next-line no-console

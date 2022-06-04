@@ -1,4 +1,5 @@
-import { Box, Button, Center, Flex, Heading, Input } from '@chakra-ui/react';
+import { Box, Button, Center, Flex, Heading, Input, Link } from '@chakra-ui/react';
+import { SearchIcon } from 'assets/svgs';
 import { ChangeEvent, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
@@ -26,24 +27,40 @@ const Layout = () => {
           Cocktail 4 U
         </Heading>
       </Center>
-      <Center>
+      <Center my='10%'>
+        <Flex flexDirection='column'>
+          <Link as={NavLink} to='/' {...({ isActive }: { isActive: boolean }) => isActive && { bgColor: '#9d9d9d' }}>
+            {/* <NavLink to='/' style={({ isActive }) => isActive && { backgroundColor: '#9d9d9d' }}> */}
+            {/* <Button>COCKTAIL</Button> */}
+            COCKTAIL
+            {/* </NavLink> */}
+          </Link>
+          <NavLink
+            to='/ingredient'
+            style={(isActive) => (isActive ? { backgroundColor: '#9d9d9d' } : { backgroundColor: 'transparent' })}
+          >
+            <Button>INGREDIENT</Button>
+            {/* INGREDIENT */}
+          </NavLink>
+        </Flex>
         <form onSubmit={handleSearchButtonSubmit}>
-          <Flex justify='space-between' maxW='800px' w='90%'>
-            <Input placeholder='search your cocktail' onChange={handleInputText} value={inputText} maxW='700px' />
-            <Button onClick={handleSearchButtonSubmit}>검색</Button>
-          </Flex>
+          <Box position='relative' w='400px'>
+            <Input placeholder='search your cocktail' onChange={handleInputText} value={inputText} w='400px' />
+            <Button
+              type='submit'
+              onSubmit={handleSearchButtonSubmit}
+              position='absolute'
+              right='0'
+              bgColor='transparent'
+              _focus={{ outline: 'none' }}
+              _hover={{ bgColor: 'transparent' }}
+              _active={{ bgColor: 'transparent' }}
+            >
+              <SearchIcon width='25px' />
+            </Button>
+          </Box>
         </form>
       </Center>
-      <Flex flexDirection='column'>
-        <NavLink to='/'>
-          {/* <Button>COCKTAIL</Button> */}
-          COCKTAIL
-        </NavLink>
-        <NavLink to='ingredient'>
-          {/* <Button>INGREDIENT</Button> */}
-          INGREDIENT
-        </NavLink>
-      </Flex>
       <Outlet />
     </Box>
   );
