@@ -1,5 +1,6 @@
 import { Box, Button, Center, Divider, Flex, Heading, Input } from '@chakra-ui/react';
 import { SearchIcon } from 'assets/svgs';
+import BackButton from 'components/backButton/backButton';
 import { ChangeEvent, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';

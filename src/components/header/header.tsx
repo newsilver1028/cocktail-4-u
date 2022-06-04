@@ -1,5 +1,6 @@
 import { Button, Divider, Flex, Text } from '@chakra-ui/react';
 import { ActiveIcon } from 'assets/svgs';
+import BackButton from 'components/backButton/backButton';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -35,6 +36,7 @@ const Header = () => {
           </Button>
         </Link>
       </Flex>
+      <BackButton />
     </header>
   );
 };
