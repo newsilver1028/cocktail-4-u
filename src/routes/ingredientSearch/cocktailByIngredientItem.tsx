@@ -1,4 +1,5 @@
-import { Flex, Heading, Center, Image } from '@chakra-ui/react';
+import { Center, Flex, Heading, Image } from '@chakra-ui/react';
+import { DisabledIcon } from 'assets/svgs';
 import { ICocktailByIngredient } from 'types/type';
 
 const CocktailByIngredient = ({ item }: { item: ICocktailByIngredient }) => {
@@ -12,7 +13,11 @@ const CocktailByIngredient = ({ item }: { item: ICocktailByIngredient }) => {
           alt={strDrink}
           boxSize='250px'
           borderRadius='md'
-          fallbackSrc='https://cdn-icons-png.flaticon.com/512/3126/3126698.png'
+          fallback={
+            <Center w='250px' h='250px'>
+              <DisabledIcon width='100px' height='100px' />
+            </Center>
+          }
         />
       </Center>
       <Center>

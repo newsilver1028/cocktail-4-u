@@ -1,25 +1,9 @@
-import {
-  Flex,
-  Heading,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Text,
-  Tr,
-  useDisclosure,
-} from '@chakra-ui/react';
+import { Flex, Heading, Table, TableContainer, Tbody, Td, Tr, useDisclosure } from '@chakra-ui/react';
 import { IIngredient } from 'types/type.d';
 import IngredientModal from './ingradientModal';
 
 const IngredientItem = ({ item }: { item: IIngredient }) => {
-  const { strABV, strAlcohol, strDescription, strIngredient, strType } = item;
+  const { strABV, strAlcohol, strIngredient, strType } = item;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (

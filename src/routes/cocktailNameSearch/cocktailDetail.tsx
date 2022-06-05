@@ -97,7 +97,11 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
             alt={strDrink}
             boxSize='350px'
             borderRadius='md'
-            fallbackSrc='https://cdn-icons-png.flaticon.com/512/3126/3126698.png'
+            fallback={
+              <Center w='350px' h='350px'>
+                <DisabledIcon width='200px' height='200px' />
+              </Center>
+            }
           />
         </Flex>
         <Flex flexDirection='column' rowGap='20' maxW='720px' m='30px 20px'>

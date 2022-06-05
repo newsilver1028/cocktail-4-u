@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Image, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
+import { Button, Center, Flex, Heading, Image, Table, TableContainer, Tbody, Td, Tr } from '@chakra-ui/react';
 import { ActiveIcon, DisabledIcon } from 'assets/svgs';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
@@ -28,7 +28,11 @@ const CocktailItem = ({ item }: { item: ICocktail }) => {
           alt={strDrink}
           boxSize='230px'
           borderRadius='md'
-          fallbackSrc='https://cdn-icons-png.flaticon.com/512/3126/3126698.png'
+          fallback={
+            <Center w='230px' h='230px'>
+              <DisabledIcon width='100px' height='100px' />
+            </Center>
+          }
         />
       </Link>
       <Flex flexDirection='column' gap='2' maxW='250px' minW='200px' letterSpacing='wide'>
