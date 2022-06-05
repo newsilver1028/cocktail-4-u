@@ -3,7 +3,10 @@ import { Button } from '@chakra-ui/react';
 
 const TopButton = () => {
   const handleTopButtonClick = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   };
 
   return (
