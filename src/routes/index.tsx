@@ -11,8 +11,8 @@ import '@fontsource/quicksand/700.css';
 const theme = extendTheme({
   colors: {
     bgColor: {
-      100: '#000000',
-      200: '#172736',
+      100: '#7f5a83',
+      200: '#0d324d',
     },
   },
   font: {
@@ -23,7 +23,7 @@ const theme = extendTheme({
 const App = () => {
   return (
     <ChakraProvider theme={theme}>
-      <Center bgGradient='linear( to-r,  bgColor.100 -10.7%, bgColor.200 88.8% )'>
+      <Center bgGradient='linear( to-br,  bgColor.100 0%, bgColor.200 74% )'>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<CocktailNameSearch />} />
