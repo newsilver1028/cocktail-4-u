@@ -38,7 +38,6 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
     strMeasure,
     strInstructions,
   } = item;
-  // console.log({ strIngredient, strMeasure });
 
   const isbookmarked = bookmarkList.find((bookmark) => bookmark.idDrink === idDrink);
 
