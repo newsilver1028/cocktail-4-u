@@ -1,4 +1,4 @@
-import { ChakraProvider, Center, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, Center as Box, extendTheme } from '@chakra-ui/react';
 import CocktailDetailPage from 'routes/cocktailNameSearch/cocktailDetailPage';
 import BookmarkPage from './bookmarkPage';
 import { Route, Routes } from 'react-router-dom';
@@ -23,7 +23,7 @@ const theme = extendTheme({
 const App = () => {
   return (
     <ChakraProvider theme={theme}>
-      <Center bgGradient='linear( to-br,  bgColor.100 0%, bgColor.200 74% )'>
+      <Box bgGradient='linear( to-br,  bgColor.100 0%, bgColor.200 74% )'>
         <Routes>
           <Route element={<Layout />}>
             <Route index element={<CocktailNameSearch />} />
@@ -34,7 +34,7 @@ const App = () => {
           <Route path='bookmark' element={<BookmarkPage />} />
           <Route path='ingredient/:idDrink' element={<CocktailDetailPage />} />
         </Routes>
-      </Center>
+      </Box>
     </ChakraProvider>
   );
 };

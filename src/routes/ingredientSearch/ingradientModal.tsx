@@ -23,10 +23,11 @@ const IngredientModal = ({ item, isOpen, onClose }: { item: IIngredient; isOpen:
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent
-        maxW='500px'
+        w='80%'
+        maxW='800px'
         py='10px'
         border='1px solid white'
-        bgGradient='linear( to-r,  bgColor.100 -10.7%, bgColor.200 88.8% )'
+        bgGradient='linear( to-br,  bgColor.100 0%, bgColor.200 74% )'
         color='white'
       >
         <ModalHeader>

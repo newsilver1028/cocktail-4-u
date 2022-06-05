@@ -15,7 +15,7 @@ const Header = () => {
             _hover={{ bgColor: 'transparent' }}
             _active={{ bgColor: 'transparent' }}
           >
-            <ActiveIcon width='30px' />
+            <ActiveIcon width='30px' height='30px' />
             <Text ml='10px' color='white' fontWeight='normal' fontSize='xl' letterSpacing='wide'>
               C4U
             </Text>
@@ -29,7 +29,7 @@ const Header = () => {
             _hover={{ bgColor: 'transparent' }}
             _active={{ bgColor: 'transparent' }}
           >
-            <ActiveIcon width='30px' />
+            <ActiveIcon width='30px' height='30px' />
             <Text ml='10px' color='white' fontWeight='normal' fontSize='xl' letterSpacing='wide'>
               MY COCKTAIL
             </Text>
