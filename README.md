@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# COCKTAIL 4 U
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 📢 Introduction
+**칵테일을 이름과 재료로 찾고 북마크에 추가할 수 있는 웹 페이지**
+### 🍹[Deploy](https://cocktail-4-u.netlify.app/) 
 
-## Available Scripts
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fb55dd5f-b02e-4440-b4e3-de6e00400c5a/deploy-status)](https://app.netlify.com/sites/cocktail-4-u/deploys)
 
-In the project directory, you can run:
+### ✈️ Period
+2022 / 06 / 01 ~ 2022 / 06 / 05
 
-### `yarn start`
+### ⚙️ Env
+**Languages**
+- TypeScript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Libraries**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React
+- React Router
+- React-query
+- Recoil, Recoil-persist
+- Axios
+- Chakra UI
 
-### `yarn test`
+### 구현 기능
+### ✨ 검색 결과 캐싱
+1. 칵테일 이름으로 검색
+- 한글자 검색 기능
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![화면 기록 2022-06-05 오전 11 32 31](https://user-images.githubusercontent.com/79626675/172032553-287dc7cb-534a-4009-93c1-2f93130f7e9a.gif)
 
-### `yarn build`
+2. 재료 이름으로 검색 
+- 이름으로 재료 검색
+- 재료로 칵테일 검색
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![화면 기록 2022-06-05 오전 11 43 33](https://user-images.githubusercontent.com/79626675/172032770-9dee3dbd-838c-452b-bf96-8eb523bbb764.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### ✨ 북마크 기능
+- 칵테일 리스트 & 상세 페이지에 북마크 기능 구현
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![화면 기록 2022-06-05 오전 11 45 43](https://user-images.githubusercontent.com/79626675/172032810-ed683ca8-8d68-4703-bb54-2317097b14d5.gif)
