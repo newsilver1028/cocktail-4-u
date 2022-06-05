@@ -36,6 +36,7 @@
 ![화면 기록 2022-06-05 오전 11 43 33](https://user-images.githubusercontent.com/79626675/172032770-9dee3dbd-838c-452b-bf96-8eb523bbb764.gif)
 
 ### ✨ 북마크 기능
+- local Storage에 저장
 - 칵테일 리스트 & 상세 페이지에 북마크 기능 구현
 
 ![화면 기록 2022-06-05 오전 11 45 43](https://user-images.githubusercontent.com/79626675/172032810-ed683ca8-8d68-4703-bb54-2317097b14d5.gif)
