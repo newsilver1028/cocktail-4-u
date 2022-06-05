@@ -65,7 +65,7 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
               _hover={{ bgColor: 'transparent' }}
               _active={{ bgColor: 'transparent' }}
             >
-              {isbookmarked ? <ActiveIcon width='40px' /> : <DisabledIcon width='40px' />}
+              {isbookmarked ? <ActiveIcon width='40px' height='40px' /> : <DisabledIcon width='40px' height='40px' />}
             </Button>
           </Flex>
         </Center>
