@@ -1,6 +1,6 @@
 import { Button, Flex, Text } from '@chakra-ui/react';
 import { ActiveIcon } from 'assets/svgs';
-import BackButton from 'components/backButton/backButton';
+import BackButton from 'components/button/backButton';
 import { Link } from 'react-router-dom';
 
 const Header = () => {

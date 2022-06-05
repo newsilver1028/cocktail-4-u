@@ -1,5 +1,6 @@
 import { Box, Button, Center, Divider, Flex, Heading, Input } from '@chakra-ui/react';
 import { SearchIcon } from 'assets/svgs';
+import TopButton from 'components/button/topButton';
 import { ChangeEvent, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
@@ -90,6 +91,9 @@ const Layout = () => {
       </Center>
       <Divider />
       <Outlet />
+      <Box position='fixed' right='0' bottom='2'>
+        <TopButton />
+      </Box>
     </Box>
   );
 };
