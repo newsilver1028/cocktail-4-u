@@ -1,4 +1,4 @@
-import { Box, Button, Center, Flex, Heading, Input } from '@chakra-ui/react';
+import { Box, Button, Center, Divider, Flex, Heading, Input } from '@chakra-ui/react';
 import { SearchIcon } from 'assets/svgs';
 import { ChangeEvent, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
@@ -88,6 +88,7 @@ const Layout = () => {
           </Box>
         </form>
       </Center>
+      <Divider />
       <Outlet />
     </Box>
   );

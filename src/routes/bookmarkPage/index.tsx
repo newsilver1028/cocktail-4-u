@@ -10,13 +10,13 @@ const BookmarkPage = () => {
   return (
     <Box maxW='1080px' w='container.xl' color='white' minH='container.md'>
       <Header />
-      <Center my='10%'>
+      <Center my='8%'>
         <Heading size='2xl' letterSpacing='widest' fontFamily='font.logo'>
-          My Cocktail
+          MY COCKTAIL
         </Heading>
       </Center>
       <Center my='10%'>
-        <Flex flexFlow='row wrap' rowGap='20' justify='space-around' flex='1' maxW='1080px'>
+        <Flex flexFlow='row wrap' rowGap='20' justify='space-around' flex='1' maxW='1080px' my='10%'>
           {bookmarkList.length === 0 ? (
             <Heading mt='30%' h='50vh' fontWeight='normal' size='md'>
               Add your Cocktail

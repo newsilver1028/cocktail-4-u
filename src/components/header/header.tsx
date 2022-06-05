@@ -31,7 +31,7 @@ const Header = () => {
           >
             <ActiveIcon width='30px' />
             <Text ml='10px' color='white' fontWeight='normal' fontSize='xl' letterSpacing='wide'>
-              My Cocktail
+              MY COCKTAIL
             </Text>
           </Button>
         </Link>
