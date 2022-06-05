@@ -15,9 +15,6 @@
     ],
     "overrides": [
       {
-        "files": [
-          "**/*.stories.*"
-        ],
         "rules": {
           "import/no-anonymous-default-export": "off"
         }
@@ -35,9 +32,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "resolutions": {
-    "react-i18next": ">=11.16.4"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.1",
