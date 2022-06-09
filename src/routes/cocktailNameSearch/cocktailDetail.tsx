@@ -15,17 +15,16 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import { ActiveIcon, DisabledIcon } from 'assets/svgs';
-import { useRecoilState } from 'recoil';
-import { bookmarkedState } from 'state/bookmarkedState';
+import { useBookmarkList } from 'hooks/useBookmarkList';
 import { ICocktail } from 'types/type.d';
+import { COMMON_STYLE } from '_shared/COMMON_STYLE';
+import { COCKTAIL_DETAIL_STYLE } from './COCKTAIL_DETAIL_STYLE';
 
 export type Temp = {
   [prop: string]: any;
 };
 
 const CocktailDetail = ({ item }: { item: ICocktail }) => {
-  const [bookmarkList, setBookmarkList] = useRecoilState(bookmarkedState);
-
   const {
     idDrink,
     strAlcoholic,
@@ -39,16 +38,7 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
     strInstructions,
   } = item;
 
-  const isbookmarked = bookmarkList.find((bookmark) => bookmark.idDrink === idDrink);
-
-  const handleBookmarkButtonClick = (e: any) => {
-    const { drinkId } = e.currentTarget.dataset;
-    if (!isbookmarked) {
-      setBookmarkList((prev) => [...prev, item]);
-      return;
-    }
-    setBookmarkList((prev) => prev.filter((bookmark) => bookmark.idDrink !== drinkId));
-  };
+  const { isbookmarked, handleBookmarkButtonClick } = useBookmarkList({ idDrink, item });
 
   return (
     <Center my='10%' color='white'>
@@ -56,20 +46,16 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
         <Center>
           <Flex justify='space-between' my='10%'>
             <Heading size='3xl'>{strDrink}</Heading>
-            <Button
-              onClick={handleBookmarkButtonClick}
-              data-drink-id={idDrink}
-              mt='10px'
-              bgColor='transparent'
-              _focus={{ outline: 'none' }}
-              _hover={{ bgColor: 'transparent' }}
-              _active={{ bgColor: 'transparent' }}
-            >
-              {isbookmarked ? <ActiveIcon width='40px' height='40px' /> : <DisabledIcon width='40px' height='40px' />}
+            <Button onClick={handleBookmarkButtonClick} data-drink-id={idDrink} mt='10px' {...COMMON_STYLE.button}>
+              {isbookmarked ? (
+                <ActiveIcon {...COCKTAIL_DETAIL_STYLE.icon} />
+              ) : (
+                <DisabledIcon {...COCKTAIL_DETAIL_STYLE.icon} />
+              )}
             </Button>
           </Flex>
         </Center>
-        <Flex flexWrap='wrap' justifyContent='space-around' gap='20'>
+        <Flex flexWrap='wrap' {...COCKTAIL_DETAIL_STYLE.flexRow}>
           <TableContainer>
             <Table variant='simple' size='md'>
               <Tbody>
@@ -95,8 +81,7 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
           <Image
             src={strDrinkThumb}
             alt={strDrink}
-            boxSize='350px'
-            borderRadius='md'
+            {...COCKTAIL_DETAIL_STYLE.image}
             fallback={
               <Center w='350px' h='350px'>
                 <DisabledIcon width='200px' height='200px' />
@@ -104,7 +89,7 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
             }
           />
         </Flex>
-        <Flex flexDirection='column' rowGap='20' maxW='720px' m='30px 20px'>
+        <Flex flexDirection='column' {...COCKTAIL_DETAIL_STYLE.flexColumn}>
           <Box>
             <Heading size='lg'>Description</Heading>
             <Text fontSize='lg' my='20px'>

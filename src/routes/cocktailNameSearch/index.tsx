@@ -1,4 +1,5 @@
 import { Center, Flex, Heading, Spinner } from '@chakra-ui/react';
+import { COMMON_STYLE } from '_shared/COMMON_STYLE';
 import { useQuery } from 'react-query';
 import { useRecoilValue } from 'recoil';
 import { getCocktailByNameApi } from 'services/getCocktailByNameApi';
@@ -15,15 +16,15 @@ const CocktailNameSearch = () => {
   });
 
   return (
-    <Center w='100%' minH='container.sm'>
+    <Center w='100%' minH='100vh'>
       {isLoading && (
-        <Center w='100%' height='100vh' mt='100px' alignItems='start'>
-          <Spinner size='xl' speed='1s' />
+        <Center {...COMMON_STYLE.spinnerWrapper}>
+          <Spinner {...COMMON_STYLE.spinner} />
         </Center>
       )}
       {!data ||
         (data.length === 0 && (
-          <Heading mt='10px' h='50vh' fontWeight='normal' size='md'>
+          <Heading textAlign='center' {...COMMON_STYLE.text}>
             We can&#39;t find any cocktail
           </Heading>
         ))}

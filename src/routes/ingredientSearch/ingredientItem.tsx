@@ -1,6 +1,7 @@
 import { Flex, Heading, Table, TableContainer, Tbody, Td, Tr, useDisclosure } from '@chakra-ui/react';
 import { IIngredient } from 'types/type.d';
 import IngredientModal from './ingradientModal';
+import { INGREDIENT_STYLE } from './INGREDIENT_STYLE';
 
 const IngredientItem = ({ item }: { item: IIngredient }) => {
   const { strABV, strAlcohol, strIngredient, strType } = item;
@@ -8,8 +9,8 @@ const IngredientItem = ({ item }: { item: IIngredient }) => {
 
   return (
     <>
-      <Flex onClick={onOpen} cursor='pointer' flexDirection='column' h='250px' my='5%'>
-        <Heading size='lg' noOfLines={1} w='300px' ml='10px' mb='10px'>
+      <Flex onClick={onOpen} flexDirection='column' {...INGREDIENT_STYLE.itemWrapper}>
+        <Heading noOfLines={1} {...INGREDIENT_STYLE.ingredientTitle}>
           {strIngredient}
         </Heading>
         <TableContainer>

@@ -2,37 +2,23 @@ import { Button, Flex, Text } from '@chakra-ui/react';
 import { ActiveIcon } from 'assets/svgs';
 import BackButton from 'components/button/backButton';
 import { Link } from 'react-router-dom';
+import { COMMON_STYLE } from '_shared/COMMON_STYLE';
+import { HEADER_STYLE } from './HEADER_STYLE';
 
 const Header = () => {
   return (
     <header>
       <Flex w='100%' justify='space-between' mt='10px'>
         <Link to='/'>
-          <Button
-            bgColor='transparent'
-            mb='15px'
-            _focus={{ outline: 'none' }}
-            _hover={{ bgColor: 'transparent' }}
-            _active={{ bgColor: 'transparent' }}
-          >
-            <ActiveIcon width='30px' height='30px' />
-            <Text ml='10px' color='white' fontWeight='normal' fontSize='xl' letterSpacing='wide'>
-              C4U
-            </Text>
+          <Button mb='15px' {...COMMON_STYLE.button}>
+            <ActiveIcon {...HEADER_STYLE.icon} />
+            <Text {...HEADER_STYLE.text}>C4U</Text>
           </Button>
         </Link>
         <Link to='/bookmark'>
-          <Button
-            bgColor='transparent'
-            mb='15px'
-            _focus={{ outline: 'none' }}
-            _hover={{ bgColor: 'transparent' }}
-            _active={{ bgColor: 'transparent' }}
-          >
-            <ActiveIcon width='30px' height='30px' />
-            <Text ml='10px' color='white' fontWeight='normal' fontSize='xl' letterSpacing='wide'>
-              MY COCKTAIL
-            </Text>
+          <Button mb='15px' {...COMMON_STYLE.button}>
+            <ActiveIcon {...HEADER_STYLE.icon} />
+            <Text {...HEADER_STYLE.text}>MY COCKTAIL</Text>
           </Button>
         </Link>
       </Flex>

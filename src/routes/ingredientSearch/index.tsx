@@ -7,7 +7,9 @@ import { getCocktailByIngredientApi } from 'services/getCocktailByIngredient';
 import { getIngredientByNameApi } from 'services/getIngredientByNameApi';
 import { searchWordState } from 'state/searchWordState';
 import { ICocktailByIngredient, IIngredient } from 'types/type';
+import { COMMON_STYLE } from '_shared/COMMON_STYLE';
 import CocktailByIngredient from './cocktailByIngredientItem';
+import { INGREDIENT_STYLE } from './INGREDIENT_STYLE';
 
 const IngredientSearch = () => {
   const searchWord = useRecoilValue(searchWordState);
@@ -33,17 +35,15 @@ const IngredientSearch = () => {
   const { isLoading: isCocktailsLoading, data: cocktails } = cocktailsQuery;
 
   return (
-    <Box my='5%' minH='container.md' color='white'>
-      <Heading size='lg' my='10%' ml='60px' fontWeight='medium'>
-        INGREDIENT
-      </Heading>
+    <Box my='5%' minH='100vh' color='white'>
+      <Heading {...INGREDIENT_STYLE.subTitle}>INGREDIENT</Heading>
       <Center>
         {isIngredientsLoading && (
-          <Center w='100%' height='50vh' mt='100px' alignItems='start'>
-            <Spinner size='xl' speed='1s' />
+          <Center {...COMMON_STYLE.spinnerWrapper}>
+            <Spinner {...COMMON_STYLE.spinner} />
           </Center>
         )}
-        <Flex flexFlow='row wrap' rowGap='20' justify='space-around' flex='1'>
+        <Flex {...INGREDIENT_STYLE.flexRow}>
           {!isIngredientsLoading &&
             ingredients &&
             ingredients.map((item: IIngredient) => <IngredientItem key={item.idIngredient} item={item} />)}
@@ -52,19 +52,17 @@ const IngredientSearch = () => {
       <Center>
         {!ingredients ||
           (ingredients.length === 0 && (
-            <Heading size='md' my='10%' fontWeight='normal'>
+            <Heading textAlign='center' {...COMMON_STYLE.text}>
               We can&#39;t find any ingredients
             </Heading>
           ))}
       </Center>
-      <Heading size='lg' my='5%' ml='60px' fontWeight='medium'>
-        COCKTAIL
-      </Heading>
+      <Heading {...INGREDIENT_STYLE.subTitle}>COCKTAIL</Heading>
       <Center>
-        <Flex flexFlow='row wrap' rowGap='20' justify='space-around' flex='1'>
+        <Flex {...INGREDIENT_STYLE.flexRow}>
           {isCocktailsLoading && (
-            <Center w='100%' height='50vh' mt='100px' alignItems='start'>
-              <Spinner size='xl' speed='1s' />
+            <Center {...COMMON_STYLE.spinnerWrapper}>
+              <Spinner {...COMMON_STYLE.spinner} />
             </Center>
           )}
           {!isCocktailsLoading &&
@@ -79,7 +77,7 @@ const IngredientSearch = () => {
       <Center>
         {!cocktails ||
           (cocktails.length === 0 && (
-            <Heading size='md' my='10%' fontWeight='normal'>
+            <Heading textAlign='center' {...COMMON_STYLE.text}>
               We can&#39;t find any cocktails
             </Heading>
           ))}

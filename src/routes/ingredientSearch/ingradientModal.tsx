@@ -15,6 +15,8 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import { IIngredient } from 'types/type.d';
+import { COMMON_STYLE } from '_shared/COMMON_STYLE';
+import { INGREDIENT_STYLE } from './INGREDIENT_STYLE';
 
 const IngredientModal = ({ item, isOpen, onClose }: { item: IIngredient; isOpen: boolean; onClose: () => void }) => {
   const { strABV, strAlcohol, strDescription, strIngredient, strType } = item;
@@ -22,24 +24,13 @@ const IngredientModal = ({ item, isOpen, onClose }: { item: IIngredient; isOpen:
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent
-        w='80%'
-        maxW='800px'
-        py='10px'
-        border='1px solid white'
-        bgGradient='linear( to-br,  bgColor.100 0%, bgColor.200 74% )'
-        color='white'
-      >
+      <ModalContent {...INGREDIENT_STYLE.modal.modalContent}>
         <ModalHeader>
-          <Heading size='lg' noOfLines={1} w='300px'>
+          <Heading noOfLines={1} size='lg' w='300px'>
             {strIngredient}
           </Heading>
         </ModalHeader>
-        <ModalCloseButton
-          _focus={{ outline: 'none' }}
-          _hover={{ bgColor: 'transparent' }}
-          _active={{ bgColor: 'transparent' }}
-        />
+        <ModalCloseButton {...COMMON_STYLE.button} />
         <ModalBody>
           <Flex flexDirection='column' rowGap='10'>
             <TableContainer>
@@ -61,7 +52,9 @@ const IngredientModal = ({ item, isOpen, onClose }: { item: IIngredient; isOpen:
               </Table>
             </TableContainer>
             <Heading size='lg'>Description</Heading>
-            <Text fontSize='lg'>{strDescription}</Text>
+            <Text fontSize='lg' lineHeight='10'>
+              {strDescription}
+            </Text>
           </Flex>
         </ModalBody>
       </ModalContent>
