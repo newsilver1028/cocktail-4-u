@@ -16,7 +16,7 @@ const CocktailDetailPage = () => {
       <Header />
       {isLoading && (
         <Center {...COMMON_STYLE.spinnerWrapper}>
-          <Spinner {...COMMON_STYLE.spinner} />
+          <Spinner {...COMMON_STYLE.spinnerWrapper} />
         </Center>
       )}
       {!isLoading && <CocktailDetail item={data[0]} />}

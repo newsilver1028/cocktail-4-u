@@ -1,3 +1,5 @@
+import { SystemProps } from '@chakra-ui/react';
+
 export const COCKTAIL_ITEM_STYLE = {
   flexRow: {
     flexFlow: 'row wrap',
@@ -7,6 +9,7 @@ export const COCKTAIL_ITEM_STYLE = {
     minW: '400px',
   },
   flexColumn: {
+    flexDir: 'column' as SystemProps['flexDirection'],
     gap: '2',
     maxW: '250px',
     minW: '200px',

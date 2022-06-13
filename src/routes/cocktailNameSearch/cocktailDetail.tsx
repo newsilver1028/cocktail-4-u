@@ -38,16 +38,18 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
     strInstructions,
   } = item;
 
-  const { isbookmarked, handleBookmarkButtonClick } = useBookmarkList({ idDrink, item });
+  const { isBookmarked, handleBookmarkButtonClick } = useBookmarkList({ idDrink });
 
   return (
     <Center my='10%' color='white'>
       <Flex flexDirection='column' rowGap='20'>
         <Center>
-          <Flex justify='space-between' my='10%'>
-            <Heading size='3xl'>{strDrink}</Heading>
-            <Button onClick={handleBookmarkButtonClick} data-drink-id={idDrink} mt='10px' {...COMMON_STYLE.button}>
-              {isbookmarked ? (
+          <Flex justify='space-around' my='10%'>
+            <Heading textAlign='center' size='3xl'>
+              {strDrink}
+            </Heading>
+            <Button onClick={handleBookmarkButtonClick} mt='10px' {...COMMON_STYLE.button}>
+              {isBookmarked ? (
                 <ActiveIcon {...COCKTAIL_DETAIL_STYLE.icon} />
               ) : (
                 <DisabledIcon {...COCKTAIL_DETAIL_STYLE.icon} />

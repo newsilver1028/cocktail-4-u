@@ -1,15 +1,14 @@
 import { Box, Center, Flex, Heading } from '@chakra-ui/react';
-import CocktailItem from 'components/cocktailItem';
 import Header from 'components/header/header';
 import { useRecoilValue } from 'recoil';
 import { LIST_STYLE } from 'routes/_shared/LIST_STYLE';
 import { bookmarkedState } from 'state/bookmarkedState';
-import { ICocktail } from 'types/type';
 import { COMMON_STYLE } from '_shared/COMMON_STYLE';
+import BookmarkItems from './BookmarkItems';
 import { BOOKMARK_PAGE_STYLE } from './BOOKMARK_PAGE_STYLE';
 
 const BookmarkPage = () => {
-  const bookmarkList = useRecoilValue<ICocktail[]>(bookmarkedState);
+  const bookmarkList = useRecoilValue<string[]>(bookmarkedState);
 
   return (
     <Box {...LIST_STYLE.wrapper}>
@@ -24,7 +23,7 @@ const BookmarkPage = () => {
               Add your Cocktail
             </Heading>
           ) : (
-            bookmarkList.map((item: ICocktail) => <CocktailItem key={item.idDrink} item={item} />)
+            bookmarkList.map((id: string) => <BookmarkItems key={id} idDrink={id} />)
           )}
         </Flex>
       </Center>

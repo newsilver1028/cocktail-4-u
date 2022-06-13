@@ -1,20 +1,17 @@
 import { useRecoilState } from 'recoil';
 import { bookmarkedState } from 'state/bookmarkedState';
-import { ICocktail } from 'types/type';
 
-export const useBookmarkList = ({ idDrink, item }: { idDrink: string; item: ICocktail }) => {
+export const useBookmarkList = ({ idDrink }: { idDrink: string }) => {
   const [bookmarkList, setBookmarkList] = useRecoilState(bookmarkedState);
-  const isbookmarked = bookmarkList.find((bookmark) => bookmark.idDrink === idDrink);
+  const isBookmarked: boolean = bookmarkList.includes(idDrink);
 
-  const handleBookmarkButtonClick = (e: any) => {
-    const { drinkId } = e.currentTarget.dataset;
-
-    if (!isbookmarked) {
-      setBookmarkList((prev) => [...prev, item]);
+  const handleBookmarkButtonClick = () => {
+    if (!isBookmarked) {
+      setBookmarkList((prev) => [...prev, idDrink]);
       return;
     }
-    setBookmarkList((prev) => prev.filter((bookmark) => bookmark.idDrink !== drinkId));
+    setBookmarkList((prev) => prev.filter((id) => id !== idDrink));
   };
 
-  return { isbookmarked, handleBookmarkButtonClick };
+  return { isBookmarked, handleBookmarkButtonClick };
 };

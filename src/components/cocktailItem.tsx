@@ -8,7 +8,7 @@ import { COMMON_STYLE } from '../_shared/COMMON_STYLE';
 
 const CocktailItem = ({ item }: { item: ICocktail }) => {
   const { idDrink, strAlcoholic, strCategory, strDrink, strDrinkThumb, strGlass } = item;
-  const { isbookmarked, handleBookmarkButtonClick } = useBookmarkList({ idDrink, item });
+  const { isBookmarked, handleBookmarkButtonClick } = useBookmarkList({ idDrink });
 
   return (
     <Flex {...COCKTAIL_ITEM_STYLE.flexRow}>
@@ -24,12 +24,12 @@ const CocktailItem = ({ item }: { item: ICocktail }) => {
           }
         />
       </Link>
-      <Flex flexDir='column' {...COCKTAIL_ITEM_STYLE.flexColumn}>
+      <Flex {...COCKTAIL_ITEM_STYLE.flexColumn}>
         <Heading noOfLines={1} {...COCKTAIL_ITEM_STYLE.title} wordBreak='break-all'>
           {strDrink}
         </Heading>
-        <Button onClick={handleBookmarkButtonClick} data-drink-id={idDrink} {...COCKTAIL_ITEM_STYLE.button}>
-          {isbookmarked ? <ActiveIcon {...COMMON_STYLE.icon} /> : <DisabledIcon {...COMMON_STYLE.icon} />}
+        <Button {...COCKTAIL_ITEM_STYLE.button} onClick={handleBookmarkButtonClick}>
+          {isBookmarked ? <ActiveIcon {...COMMON_STYLE.icon} /> : <DisabledIcon {...COMMON_STYLE.icon} />}
         </Button>
         <TableContainer>
           <Table variant='simple' size='sm'>
