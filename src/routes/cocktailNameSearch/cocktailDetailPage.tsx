@@ -6,8 +6,8 @@ import Header from 'components/header/header';
 import CocktailDetail from './CocktailDetail';
 import { postCocktailByIdApi } from 'services/postCocktailByIdApi';
 
-import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
-import { LIST_STYLE } from 'routes/_shared/LIST_STYLE';
+import { COMMON_STYLE } from 'components/_shared/COMMON_STYLE';
+import { LIST_STYLE } from 'components/_shared/LIST_STYLE';
 
 const CocktailDetailPage = () => {
   const { idDrink } = useParams<string>();

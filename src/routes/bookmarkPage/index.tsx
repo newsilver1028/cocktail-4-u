@@ -5,8 +5,8 @@ import Header from 'components/header/header';
 import BookmarkItem from './BookmarkItem';
 import { bookmarkedState } from 'state/bookmarkedState';
 
-import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
-import { LIST_STYLE } from 'routes/_shared/LIST_STYLE';
+import { COMMON_STYLE } from 'components/_shared/COMMON_STYLE';
+import { LIST_STYLE } from 'components/_shared/LIST_STYLE';
 import { BOOKMARK_PAGE_STYLE } from './BOOKMARK_PAGE_STYLE';
 
 const BookmarkPage = () => {

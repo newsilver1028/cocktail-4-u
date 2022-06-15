@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import '@fontsource/quicksand/700.css';
 import { Center as Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
 
-import Layout from './Layout';
+import Layout from '../components/Layout';
 import CocktailDetailPage from 'routes/CocktailNameSearch/CocktailDetailPage';
 import BookmarkPage from './BookmarkPage';
 import CocktailNameSearch from './CocktailNameSearch';

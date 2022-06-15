@@ -10,7 +10,7 @@ import { getIngredientByNameApi } from 'services/getIngredientByNameApi';
 
 import { ICocktailByIngredient, IIngredient } from 'types/type';
 
-import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
+import { COMMON_STYLE } from 'components/_shared/COMMON_STYLE';
 import { INGREDIENT_STYLE } from './INGREDIENT_STYLE';
 
 const IngredientSearch = () => {

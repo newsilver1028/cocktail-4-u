@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 import { Button, Center, Flex, Heading, Image } from '@chakra-ui/react';
 
 import { useBookmarkList } from 'hooks/useBookmarkList';
-import CocktailTable from './CocktailTable';
+import CocktailTable from 'routes/_shared/CocktailTable';
 import { ActiveIcon, DisabledIcon } from 'assets/svgs';
 
 import { ICocktail } from 'types/type.d';
 
-import { COMMON_STYLE } from '../../components/_shared/COMMON_STYLE';
-import { COCKTAIL_ITEM_STYLE } from './COCKTAIL_ITEM_STYLE';
+import { COMMON_STYLE } from '../components/_shared/COMMON_STYLE';
+import { COCKTAIL_ITEM_STYLE } from 'routes/_shared/COCKTAIL_ITEM_STYLE';
 
 const CocktailItem = ({ item }: { item: ICocktail }) => {
   const { idDrink, strAlcoholic, strCategory, strDrink, strDrinkThumb, strGlass } = item;

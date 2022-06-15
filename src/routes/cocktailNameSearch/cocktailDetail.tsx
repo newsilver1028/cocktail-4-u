@@ -21,7 +21,7 @@ import { ActiveIcon, DisabledIcon } from 'assets/svgs';
 
 import { ICocktail } from 'types/type.d';
 
-import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
+import { COMMON_STYLE } from 'components/_shared/COMMON_STYLE';
 import { COCKTAIL_DETAIL_STYLE } from './COCKTAIL_DETAIL_STYLE';
 
 const CocktailDetail = ({ item }: { item: ICocktail }) => {

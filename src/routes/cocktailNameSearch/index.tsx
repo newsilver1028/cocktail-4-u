@@ -2,14 +2,14 @@ import { useQuery } from 'react-query';
 import { useRecoilValue } from 'recoil';
 import { Center, Flex, Heading, ListItem, Spinner, UnorderedList } from '@chakra-ui/react';
 
-import CocktailItem from '../_shared/CocktailItem';
+import CocktailItem from 'routes/_shared/CocktailItem';
 import { searchWordState } from 'state/searchWordState';
 import { getCocktailByNameApi } from 'services/getCocktailByNameApi';
 
 import { ICocktail } from 'types/type';
 
-import { LIST_STYLE } from 'routes/_shared/LIST_STYLE';
-import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
+import { LIST_STYLE } from 'components/_shared/LIST_STYLE';
+import { COMMON_STYLE } from 'components/_shared/COMMON_STYLE';
 
 const CocktailNameSearch = () => {
   const searchWord = useRecoilValue(searchWordState);

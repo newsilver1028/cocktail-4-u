@@ -13,7 +13,7 @@ import IngredientTable from './IngredientTable';
 
 import { IIngredient } from 'types/type.d';
 
-import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
+import { COMMON_STYLE } from 'components/_shared/COMMON_STYLE';
 import { INGREDIENT_STYLE } from './INGREDIENT_STYLE';
 
 const IngredientModal = ({ item, isOpen, onClose }: { item: IIngredient; isOpen: boolean; onClose: () => void }) => {

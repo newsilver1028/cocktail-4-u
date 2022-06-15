@@ -1,6 +1,6 @@
 import { ArrowUpIcon } from '@chakra-ui/icons';
 import { Button } from '@chakra-ui/react';
-import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
+import { COMMON_STYLE } from 'components/_shared/COMMON_STYLE';
 
 const TopButton = () => {
   const handleTopButtonClick = () => {
