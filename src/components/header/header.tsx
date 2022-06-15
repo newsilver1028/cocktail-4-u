@@ -2,7 +2,7 @@ import { Button, Flex, Text } from '@chakra-ui/react';
 import { ActiveIcon } from 'assets/svgs';
 import BackButton from 'components/button/BackButton';
 import { Link } from 'react-router-dom';
-import { COMMON_STYLE } from '_shared/COMMON_STYLE';
+import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
 import { HEADER_STYLE } from './HEADER_STYLE';
 
 const Header = () => {

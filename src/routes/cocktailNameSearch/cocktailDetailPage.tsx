@@ -1,11 +1,13 @@
-import { Box, Center, Spinner } from '@chakra-ui/react';
-import Header from 'components/header/header';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
-import { LIST_STYLE } from 'routes/_shared/LIST_STYLE';
-import { postCocktailByIdApi } from 'services/postCocktailByIdApi';
-import { COMMON_STYLE } from '_shared/COMMON_STYLE';
+import { Box, Center, Spinner } from '@chakra-ui/react';
+
+import Header from 'components/header/header';
 import CocktailDetail from './CocktailDetail';
+import { postCocktailByIdApi } from 'services/postCocktailByIdApi';
+
+import { COMMON_STYLE } from 'routes/_shared/COMMON_STYLE';
+import { LIST_STYLE } from 'routes/_shared/LIST_STYLE';
 
 const CocktailDetailPage = () => {
   const { idDrink } = useParams<string>();

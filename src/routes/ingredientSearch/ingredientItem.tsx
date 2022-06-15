@@ -1,7 +1,10 @@
 import { Flex, Heading, useDisclosure } from '@chakra-ui/react';
-import { IIngredient } from 'types/type.d';
+
 import IngredientModal from './IngradientModal';
 import IngredientTable from './IngredientTable';
+
+import { IIngredient } from 'types/type.d';
+
 import { INGREDIENT_STYLE } from './INGREDIENT_STYLE';
 
 const IngredientItem = ({ item }: { item: IIngredient }) => {

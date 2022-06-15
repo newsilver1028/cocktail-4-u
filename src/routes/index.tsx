@@ -1,11 +1,13 @@
+import { Route, Routes } from 'react-router-dom';
+
 import '@fontsource/quicksand/700.css';
 import { Center as Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { Route, Routes } from 'react-router-dom';
+
+import Layout from './Layout';
 import CocktailDetailPage from 'routes/CocktailNameSearch/CocktailDetailPage';
 import BookmarkPage from './BookmarkPage';
 import CocktailNameSearch from './CocktailNameSearch';
 import IngredientSearch from './IngredientSearch';
-import Layout from './Layout';
 
 const theme = extendTheme({
   colors: {

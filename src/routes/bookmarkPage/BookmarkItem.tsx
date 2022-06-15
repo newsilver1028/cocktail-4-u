@@ -1,11 +1,13 @@
 import { useQuery } from 'react-query';
+import { Box } from '@chakra-ui/react';
+
+import CocktailItem from 'routes/_shared/CocktailItem';
 import { postCocktailByIdApi } from 'services/postCocktailByIdApi';
-import CocktailItem from 'components/CocktailItem';
 
 const BookmarkItem = ({ idDrink }: { idDrink: string }) => {
-  const { isLoading, data } = useQuery(['postCocktailById', idDrink], () => postCocktailByIdApi({ idDrink }));
+  const { isLoading, data = [] } = useQuery(['postCocktailById', idDrink], () => postCocktailByIdApi({ idDrink }));
 
-  return <div>{!isLoading && <CocktailItem key={idDrink} item={data[0]} />}</div>;
+  return <Box>{!isLoading && <CocktailItem key={idDrink} item={data[0]} />}</Box>;
 };
 
 export default BookmarkItem;

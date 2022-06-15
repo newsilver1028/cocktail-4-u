@@ -1,3 +1,5 @@
+import { HeadingProps } from '@chakra-ui/react';
+
 export const INGREDIENT_STYLE = {
   flexColumn: {
     flexFlow: 'column',
@@ -18,8 +20,9 @@ export const INGREDIENT_STYLE = {
   title: {
     w: '250px',
     size: 'lg',
-    // wordBreak: 'break-all',
-  },
+    noOfLines: 1,
+    wordBreak: 'break-all',
+  } as HeadingProps,
   subTitle: {
     my: '5%',
     ml: '60px',
