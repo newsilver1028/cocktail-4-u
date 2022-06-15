@@ -45,9 +45,9 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
       <Flex flexDirection='column' rowGap='20'>
         <Center>
           <Flex justify='space-around' my='10%'>
-            <Heading textAlign='center' size='3xl'>
-              {strDrink}
-            </Heading>
+            <Center>
+              <Heading size='3xl'>{strDrink}</Heading>
+            </Center>
             <Button onClick={handleBookmarkButtonClick} mt='10px' {...COMMON_STYLE.button}>
               {isBookmarked ? (
                 <ActiveIcon {...COCKTAIL_DETAIL_STYLE.icon} />
