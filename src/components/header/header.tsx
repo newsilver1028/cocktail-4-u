@@ -1,6 +1,6 @@
 import { Button, Flex, Text } from '@chakra-ui/react';
 import { ActiveIcon } from 'assets/svgs';
-import BackButton from 'components/button/backButton';
+import BackButton from 'components/button/BackButton';
 import { Link } from 'react-router-dom';
 import { COMMON_STYLE } from '_shared/COMMON_STYLE';
 import { HEADER_STYLE } from './HEADER_STYLE';
@@ -10,13 +10,13 @@ const Header = () => {
     <header>
       <Flex w='100%' justify='space-between' mt='10px'>
         <Link to='/'>
-          <Button mb='15px' {...COMMON_STYLE.button}>
+          <Button {...COMMON_STYLE.button} mb='15px'>
             <ActiveIcon {...HEADER_STYLE.icon} />
             <Text {...HEADER_STYLE.text}>C4U</Text>
           </Button>
         </Link>
         <Link to='/bookmark'>
-          <Button mb='15px' {...COMMON_STYLE.button}>
+          <Button {...COMMON_STYLE.button} mb='15px'>
             <ActiveIcon {...HEADER_STYLE.icon} />
             <Text {...HEADER_STYLE.text}>MY COCKTAIL</Text>
           </Button>

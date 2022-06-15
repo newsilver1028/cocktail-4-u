@@ -1,6 +1,6 @@
 import { Box, Button, Center, Divider, Flex, Heading, Input } from '@chakra-ui/react';
 import { SearchIcon } from 'assets/svgs';
-import TopButton from 'components/button/topButton';
+import TopButton from 'components/button/TopButton';
 import { ChangeEvent, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';

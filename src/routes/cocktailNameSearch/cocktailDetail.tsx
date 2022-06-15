@@ -19,10 +19,7 @@ import { useBookmarkList } from 'hooks/useBookmarkList';
 import { ICocktail } from 'types/type.d';
 import { COMMON_STYLE } from '_shared/COMMON_STYLE';
 import { COCKTAIL_DETAIL_STYLE } from './COCKTAIL_DETAIL_STYLE';
-
-export type Temp = {
-  [prop: string]: any;
-};
+import DetailTable from './DetailTable';
 
 const CocktailDetail = ({ item }: { item: ICocktail }) => {
   const {
@@ -32,7 +29,7 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
     strDrink,
     strDrinkThumb,
     strGlass,
-    strIBA,
+    strIBA = '',
     strIngredient,
     strMeasure,
     strInstructions,
@@ -57,33 +54,12 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
             </Button>
           </Flex>
         </Center>
-        <Flex flexWrap='wrap' {...COCKTAIL_DETAIL_STYLE.flexRow}>
-          <TableContainer>
-            <Table variant='simple' size='md'>
-              <Tbody>
-                <Tr>
-                  <Td>SORT</Td>
-                  <Td>{strCategory}</Td>
-                </Tr>
-                <Tr>
-                  <Td>GLASS</Td>
-                  <Td>{strGlass}</Td>
-                </Tr>
-                <Tr>
-                  <Td>ALCOHOL</Td>
-                  <Td>{strAlcoholic}</Td>
-                </Tr>
-                <Tr>
-                  <Td>IBA</Td>
-                  <Td>{strIBA}</Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </TableContainer>
+        <Flex {...COCKTAIL_DETAIL_STYLE.flexRow}>
+          <DetailTable strCategory={strCategory} strGlass={strGlass} strAlcoholic={strAlcoholic} strIBA={strIBA} />
           <Image
+            {...COCKTAIL_DETAIL_STYLE.image}
             src={strDrinkThumb}
             alt={strDrink}
-            {...COCKTAIL_DETAIL_STYLE.image}
             fallback={
               <Center w='350px' h='350px'>
                 <DisabledIcon width='200px' height='200px' />
@@ -91,7 +67,7 @@ const CocktailDetail = ({ item }: { item: ICocktail }) => {
             }
           />
         </Flex>
-        <Flex flexDirection='column' {...COCKTAIL_DETAIL_STYLE.flexColumn}>
+        <Flex {...COCKTAIL_DETAIL_STYLE.flexColumn}>
           <Box>
             <Heading size='lg'>Description</Heading>
             <Text fontSize='lg' my='20px'>

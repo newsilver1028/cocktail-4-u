@@ -7,15 +7,11 @@ import {
   ModalContent,
   ModalHeader,
   ModalOverlay,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
   Text,
-  Tr,
 } from '@chakra-ui/react';
 import { IIngredient } from 'types/type.d';
 import { COMMON_STYLE } from '_shared/COMMON_STYLE';
+import IngredientTable from './IngredientTable';
 import { INGREDIENT_STYLE } from './INGREDIENT_STYLE';
 
 const IngredientModal = ({ item, isOpen, onClose }: { item: IIngredient; isOpen: boolean; onClose: () => void }) => {
@@ -33,24 +29,7 @@ const IngredientModal = ({ item, isOpen, onClose }: { item: IIngredient; isOpen:
         <ModalCloseButton {...COMMON_STYLE.button} />
         <ModalBody>
           <Flex flexDirection='column' rowGap='10'>
-            <TableContainer>
-              <Table variant='simple' size='md'>
-                <Tbody>
-                  <Tr>
-                    <Td>ABV</Td>
-                    <Td>{strABV}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>Type</Td>
-                    <Td>{strType}</Td>
-                  </Tr>
-                  <Tr>
-                    <Td>ALCOHOL</Td>
-                    <Td>{strAlcohol}</Td>
-                  </Tr>
-                </Tbody>
-              </Table>
-            </TableContainer>
+            <IngredientTable strABV={strABV} strType={strType} strAlcohol={strAlcohol} />
             <Heading size='lg'>Description</Heading>
             <Text fontSize='lg' lineHeight='10'>
               {strDescription}

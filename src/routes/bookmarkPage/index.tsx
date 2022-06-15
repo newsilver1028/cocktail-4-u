@@ -4,7 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { LIST_STYLE } from 'routes/_shared/LIST_STYLE';
 import { bookmarkedState } from 'state/bookmarkedState';
 import { COMMON_STYLE } from '_shared/COMMON_STYLE';
-import BookmarkItems from './BookmarkItems';
+import BookmarkItem from './BookmarkItem';
 import { BOOKMARK_PAGE_STYLE } from './BOOKMARK_PAGE_STYLE';
 
 const BookmarkPage = () => {
@@ -19,11 +19,11 @@ const BookmarkPage = () => {
       <Center my='10%'>
         <Flex {...BOOKMARK_PAGE_STYLE.flexRow}>
           {bookmarkList.length === 0 ? (
-            <Heading textAlign='center' {...COMMON_STYLE.text}>
-              Add your Cocktail
-            </Heading>
+            <Center>
+              <Heading {...COMMON_STYLE.text}>Add your Cocktail</Heading>
+            </Center>
           ) : (
-            bookmarkList.map((id: string) => <BookmarkItems key={id} idDrink={id} />)
+            bookmarkList.map((id: string) => <BookmarkItem key={id} idDrink={id} />)
           )}
         </Flex>
       </Center>

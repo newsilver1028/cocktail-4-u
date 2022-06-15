@@ -2,13 +2,13 @@ import { Box, Center, Flex, Heading, Spinner } from '@chakra-ui/react';
 import { useQueries } from 'react-query';
 import { Link } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import IngredientItem from 'routes/ingredientSearch/ingredientItem';
+import IngredientItem from 'routes/IngredientSearch/IngredientItem';
 import { getCocktailByIngredientApi } from 'services/getCocktailByIngredient';
 import { getIngredientByNameApi } from 'services/getIngredientByNameApi';
 import { searchWordState } from 'state/searchWordState';
 import { ICocktailByIngredient, IIngredient } from 'types/type';
 import { COMMON_STYLE } from '_shared/COMMON_STYLE';
-import CocktailByIngredient from './cocktailByIngredientItem';
+import CocktailByIngredient from './CocktailByIngredientItem';
 import { INGREDIENT_STYLE } from './INGREDIENT_STYLE';
 
 const IngredientSearch = () => {

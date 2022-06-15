@@ -5,7 +5,7 @@ import { useRecoilValue } from 'recoil';
 import { getCocktailByNameApi } from 'services/getCocktailByNameApi';
 import { searchWordState } from 'state/searchWordState';
 import { ICocktail } from 'types/type';
-import CocktailItem from '../../components/cocktailItem';
+import CocktailItem from '../../components/CocktailItem';
 
 const CocktailNameSearch = () => {
   const searchWord = useRecoilValue(searchWordState);

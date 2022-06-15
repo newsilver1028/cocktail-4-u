@@ -1,12 +1,11 @@
-import { ChakraProvider, Center as Box, extendTheme } from '@chakra-ui/react';
-import CocktailDetailPage from 'routes/cocktailNameSearch/cocktailDetailPage';
-import BookmarkPage from './bookmarkPage';
-import { Route, Routes } from 'react-router-dom';
-import CocktailNameSearch from './cocktailNameSearch';
-import IngredientSearch from './ingredientSearch';
-import Layout from './layout';
-
 import '@fontsource/quicksand/700.css';
+import { Center as Box, ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { Route, Routes } from 'react-router-dom';
+import CocktailDetailPage from 'routes/CocktailNameSearch/CocktailDetailPage';
+import BookmarkPage from './BookmarkPage';
+import CocktailNameSearch from './CocktailNameSearch';
+import IngredientSearch from './IngredientSearch';
+import Layout from './Layout';
 
 const theme = extendTheme({
   colors: {

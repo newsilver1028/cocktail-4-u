@@ -10,9 +10,9 @@ const CocktailByIngredient = ({ item }: { item: ICocktailByIngredient }) => {
     <Flex {...INGREDIENT_STYLE.flexColumn}>
       <Center>
         <Image
+          {...INGREDIENT_STYLE.image}
           src={strDrinkThumb}
           alt={strDrink}
-          {...INGREDIENT_STYLE.image}
           fallback={
             <Center w='250px' h='250px'>
               <DisabledIcon width='100px' height='100px' />
@@ -21,7 +21,7 @@ const CocktailByIngredient = ({ item }: { item: ICocktailByIngredient }) => {
         />
       </Center>
       <Center>
-        <Heading noOfLines={1} {...INGREDIENT_STYLE.title}>
+        <Heading {...INGREDIENT_STYLE.title} noOfLines={1} wordBreak='break-all'>
           {strDrink}
         </Heading>
       </Center>

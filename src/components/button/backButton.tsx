@@ -11,7 +11,7 @@ const BackButton = () => {
   };
 
   return (
-    <Button onClick={handleBackButtonClick} {...COMMON_STYLE.button}>
+    <Button {...COMMON_STYLE.button} onClick={handleBackButtonClick}>
       <ArrowBackIcon w='30px' h='30px' />
     </Button>
   );

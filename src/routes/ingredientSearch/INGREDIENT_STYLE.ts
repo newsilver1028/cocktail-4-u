@@ -18,6 +18,7 @@ export const INGREDIENT_STYLE = {
   title: {
     w: '250px',
     size: 'lg',
+    // wordBreak: 'break-all',
   },
   subTitle: {
     my: '5%',

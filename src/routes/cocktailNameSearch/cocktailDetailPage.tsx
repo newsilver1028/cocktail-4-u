@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { LIST_STYLE } from 'routes/_shared/LIST_STYLE';
 import { postCocktailByIdApi } from 'services/postCocktailByIdApi';
 import { COMMON_STYLE } from '_shared/COMMON_STYLE';
-import CocktailDetail from './cocktailDetail';
+import CocktailDetail from './CocktailDetail';
 
 const CocktailDetailPage = () => {
   const { idDrink } = useParams<string>();
@@ -16,7 +16,7 @@ const CocktailDetailPage = () => {
       <Header />
       {isLoading && (
         <Center {...COMMON_STYLE.spinnerWrapper}>
-          <Spinner {...COMMON_STYLE.spinnerWrapper} />
+          <Spinner {...COMMON_STYLE.spinner} />
         </Center>
       )}
       {!isLoading && <CocktailDetail item={data[0]} />}
